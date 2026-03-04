@@ -12,7 +12,9 @@ Rebuild the one-page scrollytelling story from Shorthand as a maintainable, stan
 - Missing asset (404 on CDN):
   - `https://pribehy.shorthandstories.com/texty-ktere-manipuluji/assets/social.jpg`
 - Vanilla TS + Vite project created in `manipulaci-rebuild/`
-- Intro section implemented (basic hero with background image and titles)
+- Section 1 (intro) implemented and tuned (desktop + mobile subtitles, blur-on-scroll)
+- Section 3 (text + GIF) implemented and tuned (desktop + mobile order)
+- Section 4 (reveal) implemented and tuned (two backgrounds, two text panels, scroll timing)
 
 ## Working Approach
 We will rebuild the page section by section, keeping code readable and reusable. Each section will have:
@@ -40,12 +42,13 @@ We will rebuild the page section by section, keeping code readable and reusable.
 17. TextSection
 
 ## Next Steps
-1. Finalize intro text (confirm diacritics and exact wording).
-2. Section 3: first TextSection (layout + typography).
-3. Section 4: first RevealSection (image reveal effect).
-4. Section 5: first ScrollpointsSection (scroll-driven focus points).
+1. Section 5: first ScrollpointsSection (scroll-driven focus points).
+2. Section 6–7: title sections (desktop + mobile variants).
+3. Section 8–9: text sections.
+4. Section 10: reveal section.
 5. Continue sequentially through remaining sections.
 
 ## Open Questions
 - Should we keep the exact typography and colors from Shorthand, or establish a simplified style system and approximate them?
 - Do we want a small component structure (e.g., `src/sections/`) or keep everything in `main.ts` for now?
+- Confirm the correct assets for Reveal section top decorative edge on all breakpoints.
