@@ -1,0 +1,563 @@
+[
+  {
+    "id": "section-wb5nRYcr0e",
+    "title": "Zlobivý formulář",
+    "media": "https://pribehy.shorthandstories.com/texty-ktere-manipuluji/assets/aRguPfGB83/0000-1.jpg",
+    "points": [
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "zlq6vF1oKJ",
+              "x": 2.4,
+              "y": 6.8,
+              "width": 96.19999999999999,
+              "height": 85.5,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 19.299999999999994,
+              "dotY": 54.65,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "217hLdjsyX",
+              "x": 29.699999999999996,
+              "y": 9.799999999999999,
+              "width": 11.999999999999996,
+              "height": 13.399999999999997,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 38.099999999999994,
+              "dotY": 21.9,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "Kkkuv0STj2",
+              "x": 20.800000000000004,
+              "y": 27.5,
+              "width": 13.299999999999999,
+              "height": 33,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 29.700000000000006,
+              "dotY": 45.6,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "P07cR4Kpza",
+              "x": 42.1,
+              "y": 48.199999999999996,
+              "width": 7.699999999999996,
+              "height": 13.700000000000003,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 45.95,
+              "dotY": 61.9,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "sdVTp5WmfQ",
+              "x": 79.4,
+              "y": 30.800000000000004,
+              "width": 9.099999999999994,
+              "height": 17.700000000000003,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 79.4,
+              "dotY": 48.50000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "xqDpolQ8xr",
+              "x": 59.3,
+              "y": 9.900000000000006,
+              "width": 10.200000000000003,
+              "height": 21.400000000000006,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 69.5,
+              "dotY": 31.30000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "XtsqsOXi56",
+              "x": 44.199999999999996,
+              "y": 13.599999999999994,
+              "width": 8.799999999999997,
+              "height": 22.799999999999997,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 52.99999999999999,
+              "dotY": 36.39999999999999,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "KDO JE  V NAŠEM KLUBU:"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "GImovVpnN0",
+              "x": 9.700000000000001,
+              "y": 35.300000000000004,
+              "width": 16.699999999999996,
+              "height": 62.70000000000003,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 20.050000000000004,
+              "dotY": 53.949999999999996,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden",
+              "label": "",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Zlobivý formulář\n- Nutí tě vyplnit údaje, které nejsou potřeba\n- Automaticky tě přihlašuje k odběru novinek\n- Políčka řadí tak, aby tě zmátla\n– Registrací projdeš hravě.  Zrušení? Pekelné"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "ekjR1DY8l5",
+              "x": 22.700000000000003,
+              "y": 26.099999999999994,
+              "width": 12.899999999999999,
+              "height": 53.300000000000004,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 29.700000000000003,
+              "dotY": 46.24999999999999,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Vyskakovací okNO\n- Brání ti v zobrazení obsahu, který chceš číst\n- Znesnadňuje ti zavření, protože křížek\n👉 je titěrný,\n👉 je na druhé straně,\n👉 objeví se až za pár vteřin,\n👉 tam vůbec není."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "L8iXCwfNC3",
+              "x": 29.400000000000002,
+              "y": 0.6999999999999948,
+              "dotX": 37.2,
+              "dotY": 23.099999999999998,
+              "color": "Theme-ForegroundColor-0",
+              "width": 13.400000000000002,
+              "hasDot": true,
+              "height": 46.599999999999994,
+              "dotColor": "Theme-BackgroundColor-3",
+              "isHidden": true,
+              "effect": "hidden",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Zavádějící tlačítko\n- Po kliknutí vede jinam, než bys čekal\n- Snaží se tě textací odradit od kliknutí\n- Je moc malé, abys na něj co? No, nekliknul\n- Má červenou barvu, i když vede k tvému souhlasu"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "d2tgqDeNcX",
+              "x": 39.6,
+              "y": 55.900000000000006,
+              "width": 12.59999999999998,
+              "height": 43.29999999999998,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 46.25,
+              "dotY": 62.45000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Falešná sleva, skrytý poplatek\n- Cena platí jen při nákupu více kusů (což ti dlouho nikdo neřekne)\n- Původní cena je přestřelená, aby sleva vypadala lákavě\n- Produkt stojí stejně jako včera, ale je u něj štítek SLEVA\n- Cena vypadá zajímavě, ale při nákupu ti postupně naskáče řada\n„servisních“ poplatků."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "i3v12mmyNS",
+              "x": 63.900000000000006,
+              "y": 23.199999999999996,
+              "width": 12.500000000000007,
+              "height": 43.900000000000006,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 69.7,
+              "dotY": 31.049999999999997,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Nevrlý checkbox\n- Souhlasy (které většinou nechceš) máš předvyplněné\n– Nevýhodné podmínky dokáže solidně zamaskovat\n- Texty má tak šikovné, že souhlasíš s něčím jiným, než předpokládáš"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "UkCrL5SfHg",
+              "x": 88.19999999999999,
+              "y": 62.4,
+              "dotX": 91.49999999999997,
+              "dotY": 65.19999999999999,
+              "color": "Theme-ForegroundColor-0",
+              "width": 7.300000000000011,
+              "hasDot": true,
+              "height": 10.600000000000001,
+              "dotColor": "Theme-BackgroundColor-7",
+              "isHidden": true,
+              "effect": "hidden"
+            },
+            {
+              "id": "FUaIatzfYZ",
+              "x": 74.2,
+              "y": 43.2,
+              "width": 13.200000000000003,
+              "height": 52.39999999999999,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 80.80000000000001,
+              "dotY": 49.5,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "darkenAroundHighlight": true,
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "Rozbitý časovač\n- Když vyprší, nic se nestane. Resetuje se\n- Straší tě celou dobu, nemůžeš ho zavřít a ni obejít"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "6DbT4JlamQ",
+              "x": 47.3,
+              "y": 22.000000000000007,
+              "width": 11.700000000000003,
+              "height": 50.6,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 52.849999999999994,
+              "dotY": 36.800000000000004,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden",
+              "darkenAroundHighlight": true
+            }
+          ]
+        },
+        "text": "Manipulák\nJo, to jsem já. Text, který, tě chytá na háček.\nU většiny lumpáren Dark Patterns klubu nesmím chybět."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "zlq6vF1oKJ",
+              "x": 2.4,
+              "y": 6.8,
+              "width": 96.19999999999999,
+              "height": 85.5,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 19.299999999999994,
+              "dotY": 54.65,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "217hLdjsyX",
+              "x": 29.699999999999996,
+              "y": 9.799999999999999,
+              "width": 11.999999999999996,
+              "height": 13.399999999999997,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 38.099999999999994,
+              "dotY": 21.9,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "Kkkuv0STj2",
+              "x": 20.800000000000004,
+              "y": 27.5,
+              "width": 13.299999999999999,
+              "height": 33,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 29.700000000000006,
+              "dotY": 45.6,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "P07cR4Kpza",
+              "x": 42.1,
+              "y": 48.199999999999996,
+              "width": 7.699999999999996,
+              "height": 13.700000000000003,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 45.95,
+              "dotY": 61.9,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "sdVTp5WmfQ",
+              "x": 79.4,
+              "y": 30.800000000000004,
+              "width": 9.099999999999994,
+              "height": 17.700000000000003,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 79.4,
+              "dotY": 48.50000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "xqDpolQ8xr",
+              "x": 59.3,
+              "y": 9.900000000000006,
+              "width": 10.200000000000003,
+              "height": 21.400000000000006,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 69.5,
+              "dotY": 31.30000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            },
+            {
+              "id": "XtsqsOXi56",
+              "x": 44.199999999999996,
+              "y": 13.599999999999994,
+              "width": 8.799999999999997,
+              "height": 22.799999999999997,
+              "isHidden": false,
+              "hasDot": true,
+              "dotX": 52.99999999999999,
+              "dotY": 36.39999999999999,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-BackgroundColor-3",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": ""
+      }
+    ]
+  },
+  {
+    "id": "section-xKuIz5o0hQ",
+    "title": "Co ještě umíme?",
+    "media": "https://pribehy.shorthandstories.com/texty-ktere-manipuluji/assets/mEJc9CPbuw/na-vrh-bez-na-zvu-2.jpg",
+    "points": [
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "TLTDnfMiAH",
+              "x": 44,
+              "y": 6.6,
+              "width": 8.200000000000003,
+              "height": 87.30000000000001,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 48.1,
+              "dotY": 50.25000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "Co ještě umíme?"
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "CgTrzAah1w",
+              "x": 36.4,
+              "y": 6.799999999999997,
+              "dotX": 36.4,
+              "dotY": 19.099999999999994,
+              "color": "Theme-ForegroundColor-0",
+              "width": 6.899999999999999,
+              "hasDot": false,
+              "height": 12.399999999999999,
+              "effect": "hidden",
+              "dotColor": "Theme-ForegroundColor-0",
+              "isHidden": false
+            }
+          ]
+        },
+        "text": "V. PŘEHÁNĚNÍ VÝHOD\n„Zázračný elixír, se kterým budete šťastní! Zhubnete 10 kg za týden a zastavíte stárnutí.“\nStarý trik, který těží z tvojí touhy po\nrychlých a snadných řešeních\n. V reklamách ti slibujeme mega výsledky, které ale nejsou podložené žádnými důkazy.\nNa tohle nám lidi už moc neskáčete... Ale, vlastně jo. Občas se chytíte."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "k69nqJ3DOF",
+              "x": 36.6,
+              "y": 21.3,
+              "dotX": 43.3,
+              "dotY": 33.8,
+              "color": "Theme-ForegroundColor-0",
+              "width": 6.699999999999992,
+              "hasDot": false,
+              "height": 12.799999999999997,
+              "effect": "hidden",
+              "dotColor": "Theme-ForegroundColor-0",
+              "isHidden": false
+            }
+          ]
+        },
+        "text": "VI. SLIBY (CHYBY)\n„Tvůj život už nikdy nebude stejný!“\nTo je super, ne? Prostě věř, že ti změníme život, ať to znamená cokoli. Tady ti ani nelžeme – že život nebude stejný tak nějak vychází z jeho podstaty.\nJo, a kdyby ses s námi chtěl potkat, hledej v kategorii hubnutí nebo financí. Protože slibovat nesplnitelné a přehánět do aleluje, to nám vážně jde."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "51eJqyjocN",
+              "x": 36.5,
+              "y": 36.1,
+              "width": 6.899999999999999,
+              "height": 12.899999999999999,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 39.45,
+              "dotY": 42.95,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "VII. MATOUCÍ JAZYK\nAle samozřejmě, že to dává smysl! Tedy… pokud správně chápeš podmíněnou reciprocitu v kontextu dynamické optimalizace uživatelských preferencí v rámci rozšířeného souhlasu… Ne?\nHehe, vidím tvůj výraz! Matoucí jazyk je moje specialita. Přidám pár odborných termínů, složitou právnickou hantýrku a vyumělkované věty, až se v tom ztratíš.\nČím méně rozumíš,\ntím spíš odklikneš souhlas nebo koupíš\n, protože už tě nebaví luštit moji slovní šifru."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "FrGBPF7xbU",
+              "x": 36.7,
+              "y": 51,
+              "width": 6.600000000000001,
+              "height": 12.500000000000007,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 38.2,
+              "dotY": 58.150000000000006,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "VIII. FALEŠNÁ AUTORITA\nDoporučuje 9 z 10 lékářů.\nTo zní celkem přesvědčivě, ne? Hlavně se neptej, o jaké lékaře jde. Jestli léčí lidi, zvířata... Nebo Manipuláky... Vždyť je to fuk."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "spQktPMGcW",
+              "x": 36.6,
+              "y": 65.80000000000001,
+              "width": 6.600000000000001,
+              "height": 13.000000000000007,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 40,
+              "dotY": 72.30000000000001,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "IX.\nSOCIÁLNÍ TLAK\n„95 % tvých známých už využívá náš nový systém.”\nChceš se přidat k většině. Přece nebudeš pozadu.  Tak ti s tím pomůžeme. Prostě nakoupíš a budeš se cítit dobře – budeš mít pocit, že patříš mezi ostatní."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "HMov7EDGA5",
+              "x": 36.6,
+              "y": 80.7,
+              "width": 6.999999999999993,
+              "height": 12.399999999999991,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 39.95,
+              "dotY": 82.9,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "X. ZMATENÍ\nPŘI POROVNÁNÍ CENY\nVarianta 1:  50 min volání a 5 GB dat, 500 Kč\n(s DPH).\nVarianta 2: super tarif neomezené volání, 550 Kč\n(bez DPH).\nSrovnáváme jabka a hrušky.\nVarianta 2 možná vypadá zajímavěji. Protože ti do srovnání už nenapíšeme, že  dostaneš jen 1 GB dat. A ještě to zamotáme DPHáčkem.\nMým úkolem je udělat z jednoduchého rozhodování pekelně složitou záležitost. Každý produkt má jiné balíčky, jiné poplatky schované v poznámkách, žádné přímé porovnání. Nakonec tě unavím natolik, že si prostě vybereš možnost, která\nvypadá\nnejrozumněji. A hádej co? Právě na té nejvíc vydělám – já, ne ty."
+      },
+      {
+        "box": {
+          "highlights": [
+            {
+              "id": "zbmtst70Tv",
+              "x": 35,
+              "y": 3.5,
+              "width": 9.299999999999997,
+              "height": 91.4,
+              "isHidden": false,
+              "hasDot": false,
+              "dotX": 39.65,
+              "dotY": 49.2,
+              "color": "Theme-ForegroundColor-0",
+              "dotColor": "Theme-ForegroundColor-0",
+              "effect": "hidden"
+            }
+          ]
+        },
+        "text": "Umíme i další triky. Všechny karty z rukávu ale tahat nebudeme. 😉"
+      }
+    ]
+  }
+]
