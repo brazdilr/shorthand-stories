@@ -441,6 +441,86 @@ body {
   color: rgba(255, 6, 6, 1);
 }
 
+.section--confirmshaming {
+  background: #f3eee5;
+  border-bottom: none;
+  padding: 6rem 20vw 5rem;
+}
+
+.confirmshaming__top {
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+  text-align: left;
+}
+
+.confirmshaming__top h2 {
+  margin: 0 0 16px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #333;
+}
+
+.confirmshaming__top p {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.confirmshaming__top strong {
+  color: rgba(255, 6, 6, 1);
+  font-weight: 700;
+}
+
+.confirmshaming__bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2.5rem;
+  justify-items: start;
+}
+
+.confirmshaming__spacer {
+  height: 40px;
+  grid-column: 1 / -1;
+}
+
+.confirmshaming__cta {
+  margin-left: 0;
+  grid-column: 1;
+}
+
+.confirmshaming__cta h3 {
+  margin: 0 0 24px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: rgba(255, 6, 6, 1);
+}
+
+.confirmshaming__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.confirmshaming__btn-img {
+  width: 320px;
+  height: auto;
+}
+
+.confirmshaming__nope {
+  font-size: 16px;
+  color: #555;
+  margin: 4px 0 12px;
+}
+
+.confirmshaming__monster img {
+  width: 260px;
+  height: auto;
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 4.5rem 7vw;
@@ -535,12 +615,7 @@ body {
 
   .title-hook__text {
     left: 8vw;
-    top: 180px;
-  }
-
-  .title-hook__bottom {
-    right: 8vw;
-    bottom: 120px;
+    top: 150px;
   }
 
   .title-hook__media {
@@ -555,11 +630,8 @@ body {
     height: auto;
   }
 
-  .title-hook__text {
-    top: 150px;
-  }
-
   .title-hook__bottom {
+    right: 8vw;
     bottom: 80px;
   }
 }

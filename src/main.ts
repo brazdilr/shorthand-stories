@@ -6,6 +6,7 @@ import { renderSection03 } from './sections/section03'
 import { renderSection04, bindRevealSection } from './sections/section04'
 import { renderSection05, bindScrollpointsSection } from './sections/section05'
 import { renderSection06 } from './sections/section06'
+import { renderSection07 } from './sections/section07'
 
 type Section = {
   id: string
@@ -126,6 +127,21 @@ const section06 = renderSection06({
 
 main.appendChild(section06)
 
+const section07 = renderSection07({
+  title: 'I. CONFIRMSHAMING',
+  paragraphOne:
+    'Měl by ses <strong>stydět</strong> nebo aspoň <strong>cítit hloupě</strong>. Teda v případě, že se chystáš udělat krok, který se nám nehodí do krámu.',
+  paragraphTwo:
+    '<strong>Confirmshaming</strong> využíváme hlavně u odmítacích tlačítek. Volíme negativní formulace, aby tvůj mozek hledal cestu, jak se „špatnému“ rozhodnutí vyhnout.',
+  ctaTitle: 'Chceš zhodnotit své úspory?',
+  ctaButtonImage: '/cdn/texty-ktere-manipuluji/assets/jUgQ8qL7tf/ano-380x80.png',
+  ctaAltButton: 'Ne, chci být chudý',
+  monsterImage:
+    '/cdn/texty-ktere-manipuluji/assets/confirmshaming/chces-byt-chudy.gif'
+})
+
+main.appendChild(section07)
+
 // Skeleton for remaining sections
 for (const section of data) {
   if (section.id === 'section-AvJwMOfx9A' || section.id === 'section-PLlFDwqZ6E') continue
@@ -133,6 +149,7 @@ for (const section of data) {
   if (section.id === 'section-sj4CQ5AJy9') continue
   if (section.id === 'section-wb5nRYcr0e') continue
   if (section.id === 'section-5Kf8aHmYzZ' || section.id === 'section-zvac0qlz3u') continue
+  if (section.id === 'section-afg1OUoLur') continue
 
   const el = document.createElement('section')
   el.className = `section section--${section.type.toLowerCase()}`
