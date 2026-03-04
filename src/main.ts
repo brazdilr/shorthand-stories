@@ -5,6 +5,7 @@ import { renderIntro, bindIntroScrollEffect } from './sections/intro'
 import { renderSection03 } from './sections/section03'
 import { renderSection04, bindRevealSection } from './sections/section04'
 import { renderSection05, bindScrollpointsSection } from './sections/section05'
+import { renderSection06 } from './sections/section06'
 
 type Section = {
   id: string
@@ -114,12 +115,24 @@ const section05 = renderSection05({
 
 main.appendChild(section05)
 
+const section06 = renderSection06({
+  title: 'Jak chytáme',
+  titleEmphasis: 'na háček?',
+  subtitle: 'Používáme',
+  subtitleEmphasis: 'manipulativní techniky:',
+  imageDesktop: '/cdn/texty-ktere-manipuluji/assets/LITXJKbsSd/8-2560x1440.jpg',
+  imageMobile: '/cdn/texty-ktere-manipuluji/assets/3u0hU2Mgb4/2-1080x1920.jpg'
+})
+
+main.appendChild(section06)
+
 // Skeleton for remaining sections
 for (const section of data) {
   if (section.id === 'section-AvJwMOfx9A' || section.id === 'section-PLlFDwqZ6E') continue
   if (section.id === 'section-raFgNq0Y2f') continue
   if (section.id === 'section-sj4CQ5AJy9') continue
   if (section.id === 'section-wb5nRYcr0e') continue
+  if (section.id === 'section-5Kf8aHmYzZ' || section.id === 'section-zvac0qlz3u') continue
 
   const el = document.createElement('section')
   el.className = `section section--${section.type.toLowerCase()}`
