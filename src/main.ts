@@ -76,7 +76,7 @@ const scrollSection = (scrollpoints as { id: string; points: any[] }[]).find(
 )
 
 const scrollPoints = (scrollSection?.points ?? [])
-  .map((p: { text: string; box: { highlights: { x: number; y: number; width: number; height: number }[] } }) => {
+  .map((p: { text: string; box: { highlights: { x: number; y: number; width: number; height: number; dotX?: number; dotY?: number }[] } }) => {
     const text = p.text?.trim?.() ?? ''
     if (!text) return null
     const [titleLine, ...rest] = text.split('\n')
@@ -92,10 +92,19 @@ const scrollPoints = (scrollSection?.points ?? [])
         y: highlight.y,
         width: highlight.width,
         height: highlight.height
-      }
+      },
+      dot:
+        highlight.dotX !== undefined && highlight.dotY !== undefined
+          ? { x: highlight.dotX, y: highlight.dotY }
+          : null
     }
   })
-  .filter(Boolean) as { title: string; text: string; highlight: { x: number; y: number; width: number; height: number } }[]
+  .filter(Boolean) as {
+    title: string
+    text: string
+    highlight: { x: number; y: number; width: number; height: number }
+    dot: { x: number; y: number } | null
+  }[]
 
 const section05 = renderSection05({
   image: '/cdn/texty-ktere-manipuluji/assets/aRguPfGB83/0000-1.jpg',

@@ -262,13 +262,43 @@ body {
   overflow: hidden;
 }
 
+.scrollpoints__image-wrap {
+  position: absolute;
+  inset: 0;
+  transform-origin: top left;
+  will-change: transform;
+}
+
 .scrollpoints__image {
   position: absolute;
   inset: 0;
   width: auto;
   height: auto;
-  transform-origin: top left;
-  will-change: transform;
+  display: block;
+}
+
+.scrollpoints__dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #d9b54a;
+  border: 2px solid #111;
+  box-shadow: 0 0 0 0 rgba(217, 181, 74, 0.6);
+  animation: dotPulse 1.4s infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 181, 74, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(217, 181, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 181, 74, 0);
+  }
 }
 
 .scrollpoints__panels {
