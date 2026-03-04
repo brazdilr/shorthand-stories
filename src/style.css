@@ -242,6 +242,111 @@ body {
   margin-bottom: 10px;
 }
 
+.section--scrollpoints {
+  padding: 0;
+  background: #000;
+  border-bottom: none;
+}
+
+.scrollpoints {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.scrollpoints__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.scrollpoints__image {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+.scrollpoints__panels {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.scrollpoints__panel {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  transform: translate(-50%, 30vh);
+  width: min(680px, 80vw);
+  background: rgba(240, 240, 240, 0.96);
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  color: #1a1a1a;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.scrollpoints__panel h3 {
+  margin: 0;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #111;
+}
+
+.scrollpoints__panel h4 {
+  margin: 0 0 10px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(255, 6, 6, 1);
+}
+
+.scrollpoints__panel ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.scrollpoints__panel li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.scrollpoints__panel li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #111;
+}
+
+.scrollpoints__item-hand {
+  padding-left: 0;
+  margin-left: 18px;
+}
+
+.scrollpoints__item-hand::before {
+  content: '👉';
+  position: absolute;
+  left: -18px;
+}
+
+.scrollpoints__panel li + li {
+  margin-top: 8px;
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 4.5rem 7vw;
@@ -303,5 +408,28 @@ body {
 
   .reveal__image {
     width: 100vw;
+  }
+
+  .scrollpoints {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .scrollpoints__panel {
+    top: 12%;
+    width: min(88vw, 600px);
+    padding: 24px 22px;
+  }
+
+  .scrollpoints__panel h3 {
+    font-size: 22px;
+  }
+
+  .scrollpoints__panel h4 {
+    font-size: 20px;
+  }
+
+  .scrollpoints__panel ul {
+    font-size: 16px;
   }
 }

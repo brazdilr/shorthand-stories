@@ -130,7 +130,7 @@
             }
           ]
         },
-        "text": "Zlobivý formulář\n- Nutí tě vyplnit údaje, které nejsou potřeba\n- Automaticky tě přihlašuje k odběru novinek\n- Políčka řadí tak, aby tě zmátla\n– Registrací projdeš hravě.  Zrušení? Pekelné"
+        "text": "Zlobivý formulář\nNutí tě vyplnit údaje, které nejsou potřeba\nAutomaticky tě přihlašuje k odběru novinek\nPolíčka řadí tak, aby tě zmátla\nRegistrací projdeš hravě.  Zrušení? Pekelné"
       },
       {
         "box": {
@@ -152,7 +152,7 @@
             }
           ]
         },
-        "text": "Vyskakovací okNO\n- Brání ti v zobrazení obsahu, který chceš číst\n- Znesnadňuje ti zavření, protože křížek\n👉 je titěrný,\n👉 je na druhé straně,\n👉 objeví se až za pár vteřin,\n👉 tam vůbec není."
+        "text": "Vyskakovací okNO\nBrání ti v zobrazení obsahu, který chceš číst\nZnesnadňuje ti zavření, protože křížek\n👉 je titěrný,\n👉 je na druhé straně,\n👉 objeví se až za pár vteřin,\n👉 tam vůbec není."
       },
       {
         "box": {
@@ -174,7 +174,7 @@
             }
           ]
         },
-        "text": "Zavádějící tlačítko\n- Po kliknutí vede jinam, než bys čekal\n- Snaží se tě textací odradit od kliknutí\n- Je moc malé, abys na něj co? No, nekliknul\n- Má červenou barvu, i když vede k tvému souhlasu"
+        "text": "Zavádějící tlačítko\nPo kliknutí vede jinam, než bys čekal\nSnaží se tě textací odradit od kliknutí\nJe moc malé, abys na něj co? No, nekliknul\nMá červenou barvu, i když vede k tvému souhlasu"
       },
       {
         "box": {
@@ -196,7 +196,7 @@
             }
           ]
         },
-        "text": "Falešná sleva, skrytý poplatek\n- Cena platí jen při nákupu více kusů (což ti dlouho nikdo neřekne)\n- Původní cena je přestřelená, aby sleva vypadala lákavě\n- Produkt stojí stejně jako včera, ale je u něj štítek SLEVA\n- Cena vypadá zajímavě, ale při nákupu ti postupně naskáče řada\n„servisních“ poplatků."
+        "text": "Falešná sleva, skrytý poplatek\nCena platí jen při nákupu více kusů (což ti dlouho nikdo neřekne)\nPůvodní cena je přestřelená, aby sleva vypadala lákavě\nProdukt stojí stejně jako včera, ale je u něj štítek SLEVA\nCena vypadá zajímavě, ale při nákupu ti postupně naskáče řada\n„servisních“ poplatků."
       },
       {
         "box": {
@@ -218,7 +218,7 @@
             }
           ]
         },
-        "text": "Nevrlý checkbox\n- Souhlasy (které většinou nechceš) máš předvyplněné\n– Nevýhodné podmínky dokáže solidně zamaskovat\n- Texty má tak šikovné, že souhlasíš s něčím jiným, než předpokládáš"
+        "text": "Nevrlý checkbox\nSouhlasy (které většinou nechceš) máš předvyplněné\nNevýhodné podmínky dokáže solidně zamaskovat\nTexty má tak šikovné, že souhlasíš s něčím jiným, než předpokládáš"
       },
       {
         "box": {
@@ -254,7 +254,7 @@
             }
           ]
         },
-        "text": "Rozbitý časovač\n- Když vyprší, nic se nestane. Resetuje se\n- Straší tě celou dobu, nemůžeš ho zavřít a ni obejít"
+        "text": "Rozbitý časovač\nKdyž vyprší, nic se nestane. Resetuje se\nStraší tě celou dobu, nemůžeš ho zavřít a ni obejít"
       },
       {
         "box": {

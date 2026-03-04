@@ -1,8 +1,10 @@
 import './style.css'
 import sections from './content/sections.json'
+import scrollpoints from './content/scrollpoints.json'
 import { renderIntro, bindIntroScrollEffect } from './sections/intro'
 import { renderSection03 } from './sections/section03'
 import { renderSection04, bindRevealSection } from './sections/section04'
+import { renderSection05, bindScrollpointsSection } from './sections/section05'
 
 type Section = {
   id: string
@@ -69,11 +71,44 @@ const section04 = renderSection04({
 
 main.appendChild(section04)
 
+const scrollSection = (scrollpoints as { id: string; points: any[] }[]).find(
+  (s) => s.id === 'section-wb5nRYcr0e'
+)
+
+const scrollPoints = (scrollSection?.points ?? [])
+  .map((p: { text: string; box: { highlights: { x: number; y: number; width: number; height: number }[] } }) => {
+    const text = p.text?.trim?.() ?? ''
+    if (!text) return null
+    const [titleLine, ...rest] = text.split('\n')
+    const highlight = p.box?.highlights?.[0]
+    if (!highlight) return null
+    return {
+      title: titleLine,
+      text: rest.join('\n'),
+      highlight: {
+        x: highlight.x,
+        y: highlight.y,
+        width: highlight.width,
+        height: highlight.height
+      }
+    }
+  })
+  .filter(Boolean) as { title: string; text: string; highlight: { x: number; y: number; width: number; height: number } }[]
+
+const section05 = renderSection05({
+  image: '/cdn/texty-ktere-manipuluji/assets/aRguPfGB83/0000-1.jpg',
+  title: 'KDO JE V NAŠEM KLUBU:',
+  points: scrollPoints
+})
+
+main.appendChild(section05)
+
 // Skeleton for remaining sections
 for (const section of data) {
   if (section.id === 'section-AvJwMOfx9A' || section.id === 'section-PLlFDwqZ6E') continue
   if (section.id === 'section-raFgNq0Y2f') continue
   if (section.id === 'section-sj4CQ5AJy9') continue
+  if (section.id === 'section-wb5nRYcr0e') continue
 
   const el = document.createElement('section')
   el.className = `section section--${section.type.toLowerCase()}`
@@ -97,3 +132,8 @@ app.appendChild(main)
 
 bindIntroScrollEffect(introSection)
 bindRevealSection(section04)
+bindScrollpointsSection(section05, {
+  image: '/cdn/texty-ktere-manipuluji/assets/aRguPfGB83/0000-1.jpg',
+  title: 'KDO JE V NAŠEM KLUBU:',
+  points: scrollPoints
+})
