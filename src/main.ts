@@ -1,6 +1,6 @@
 import './style.css'
 import sections from './content/sections.json'
-import { renderIntro } from './sections/intro'
+import { renderIntro, bindIntroScrollEffect } from './sections/intro'
 
 type Section = {
   id: string
@@ -19,6 +19,7 @@ main.className = 'page'
 const introSection = renderIntro({
   title: 'Jsme Manipuláci',
   subtitle: 'Texty, které nehrají fér',
+  subtitleMobile: 'Texty, co nehrají fér',
   imageDesktop: '/cdn/texty-ktere-manipuluji/assets/7A7oV03y6P/tohle-ude-lej-tamto-nede-lej-1-2560x1440.jpg',
   imageMobile: '/cdn/texty-ktere-manipuluji/assets/HCEv8Smugo/tohle-ude-lej-tamto-nede-lej-1080-x-1920-px-1-1080x1920.jpg'
 })
@@ -48,3 +49,5 @@ for (const section of data) {
 }
 
 app.appendChild(main)
+
+bindIntroScrollEffect(introSection)
