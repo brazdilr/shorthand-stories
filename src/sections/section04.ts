@@ -6,6 +6,8 @@ type RevealPanel = {
 type Section04Config = {
   imagePrimary: string
   imageSecondary: string
+  imagePrimaryMobile: string
+  imageSecondaryMobile: string
   panelOne: RevealPanel
   panelTwo: RevealPanel
 }
@@ -21,8 +23,14 @@ export function renderSection04(config: Section04Config): HTMLElement {
   const media = document.createElement('div')
   media.className = 'reveal__media'
   media.innerHTML = `
-    <img class="reveal__image reveal__image--a" src="${config.imagePrimary}" alt="">
-    <img class="reveal__image reveal__image--b" src="${config.imageSecondary}" alt="">
+    <picture class="reveal__image reveal__image--a">
+      <source media="(max-width: 900px)" srcset="${config.imagePrimaryMobile}">
+      <img src="${config.imagePrimary}" alt="">
+    </picture>
+    <picture class="reveal__image reveal__image--b">
+      <source media="(max-width: 900px)" srcset="${config.imageSecondaryMobile}">
+      <img src="${config.imageSecondary}" alt="">
+    </picture>
   `
 
   const panels = document.createElement('div')

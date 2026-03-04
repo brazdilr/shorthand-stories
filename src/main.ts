@@ -48,6 +48,10 @@ const section04 = renderSection04({
   imagePrimary: '/cdn/texty-ktere-manipuluji/assets/ienKvNGI8G/tohle-ude-lej-tamto-nede-lej-2-2560x1440.jpg',
   imageSecondary:
     '/cdn/texty-ktere-manipuluji/assets/vqEbCHpy1T/tohle-ude-lej-tamto-nede-lej-2-bw-0.9-2560x1440.jpg',
+  imagePrimaryMobile:
+    '/cdn/texty-ktere-manipuluji/assets/9h5PyNAwHM/tohle-ude-lej-tamto-nede-lej-1080-x-1920-px-4-1080x1920.jpg',
+  imageSecondaryMobile:
+    '/cdn/texty-ktere-manipuluji/assets/p9jyvKtbLZ/tohle-ude-lej-tamto-nede-lej-1080-x-1920-px-4-bw-0.8-1080x1920.jpg',
   panelOne: {
     html: `
       <p>S partou zlounů se scházíme v klubu <strong>„Dark Patterns“</strong>.</p>
