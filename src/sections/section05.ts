@@ -27,7 +27,7 @@ export function renderSection05(config: Section05Config): HTMLElement {
   const section = document.createElement('section')
   section.className = 'section section--scrollpoints'
   section.id = 'section-05'
-  const steps = config.points.length + 3
+  const steps = config.points.length * 2 + 4
   section.style.minHeight = `${steps * 100}vh`
 
   const wrap = document.createElement('div')
@@ -124,21 +124,34 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     return { scale: baseScale, x: baseX, y: baseY }
   }
 
-  const getTransforms = (): Transform[] => {
+  const getSequence = (): { transforms: Transform[]; panels: (number | 'title' | null)[] } => {
     const viewW = window.innerWidth
     const viewH = window.innerHeight
 
     const transforms: Transform[] = []
-    transforms.push(fullTransform(viewW, viewH)) // intro full
-    transforms.push(fullTransform(viewW, viewH)) // title full
+    const panels: (number | 'title' | null)[] = []
 
-    for (const p of config.points) {
-      transforms.push(toTransform(p.highlight, viewW, viewH))
-    }
+    transforms.push(fullTransform(viewW, viewH)) // intro full
+    panels.push(null)
+    transforms.push(fullTransform(viewW, viewH)) // title hold
+    panels.push('title')
+    transforms.push(fullTransform(viewW, viewH)) // pre-zoom full
+    panels.push(null)
+
+    config.points.forEach((p, idx) => {
+      const target = toTransform(p.highlight, viewW, viewH)
+      transforms.push(target) // zoom to point
+      panels.push(null)
+      transforms.push(target) // hold + panel
+      panels.push(idx)
+      transforms.push(target) // pre-zoom (stay) for next move
+      panels.push(null)
+    })
 
     transforms.push(fullTransform(viewW, viewH)) // outro full
+    panels.push(null)
 
-    return transforms
+    return { transforms, panels }
   }
 
   const update = () => {
@@ -149,7 +162,7 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     const total = Math.max(1, rect.height - viewH)
     const progress = clamp((viewH - rect.top) / total)
 
-    const transforms = getTransforms()
+    const { transforms, panels } = getSequence()
     const steps = transforms.length
 
     const stepFloat = progress * (steps - 1)
@@ -159,47 +172,31 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     const a = transforms[step]
     const b = transforms[step + 1]
 
-    const scale = a.scale + (b.scale - a.scale) * t
-    const x = a.x + (b.x - a.x) * t
-    const y = a.y + (b.y - a.y) * t
+    // Panels
+    const activePanel = panels[step]
+
+    const scale =
+      activePanel !== null ? a.scale : a.scale + (b.scale - a.scale) * t
+    const x = activePanel !== null ? a.x : a.x + (b.x - a.x) * t
+    const y = activePanel !== null ? a.y : a.y + (b.y - a.y) * t
 
     image.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(3)})`
 
     // Panels
-    const titleIndex = 1
-    const firstPointIndex = 2
-    const lastPointIndex = 1 + config.points.length
+    const translate = (1 - t) * 60
+    const visible = t > 0 ? '0.92' : '0'
 
-    const panelMove = (pStart: number, pEnd: number) => {
-      const local = clamp((stepFloat - pStart) / (pEnd - pStart))
-      const eased = ease(local)
-      const translate = (1 - eased) * 60
-      const visible = local > 0 ? 0.92 : 0
-      return { translate, visible }
-    }
-
-    const showTitle = stepFloat >= titleIndex && stepFloat < firstPointIndex
-    const titleMotion = panelMove(titleIndex, firstPointIndex)
-    titlePanel.style.opacity = showTitle ? String(titleMotion.visible) : '0'
-    titlePanel.style.transform = showTitle
-      ? `translate(-50%, ${titleMotion.translate}vh)`
-      : 'translate(-50%, 60vh)'
+    titlePanel.style.opacity = activePanel === 'title' ? visible : '0'
+    titlePanel.style.transform =
+      activePanel === 'title' ? `translate(-50%, ${translate}vh)` : 'translate(-50%, 60vh)'
 
     pointPanels.forEach((panel, idx) => {
-      const panelStep = firstPointIndex + idx
-      const nextStep = panelStep + 1
-      const inRange = stepFloat >= panelStep && stepFloat < nextStep
-      const motion = panelMove(panelStep, nextStep)
-      panel.style.opacity = inRange ? String(motion.visible) : '0'
-      panel.style.transform = inRange
-        ? `translate(-50%, ${motion.translate}vh)`
+      const isActive = activePanel === idx
+      panel.style.opacity = isActive ? visible : '0'
+      panel.style.transform = isActive
+        ? `translate(-50%, ${translate}vh)`
         : 'translate(-50%, 60vh)'
     })
-
-    if (stepFloat > lastPointIndex + 0.2) {
-      titlePanel.style.opacity = '0'
-      pointPanels.forEach((panel) => (panel.style.opacity = '0'))
-    }
   }
 
   const onResize = () => {

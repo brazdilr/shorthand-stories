@@ -80,11 +80,13 @@ const scrollPoints = (scrollSection?.points ?? [])
     const text = p.text?.trim?.() ?? ''
     if (!text) return null
     const [titleLine, ...rest] = text.split('\n')
+    const body = rest.join('\n').trim()
     const highlight = p.box?.highlights?.[0]
     if (!highlight) return null
+    if (!body) return null
     return {
       title: titleLine,
-      text: rest.join('\n'),
+      text: body,
       highlight: {
         x: highlight.x,
         y: highlight.y,
