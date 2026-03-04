@@ -173,6 +173,6 @@ body {
   }
 
   .text-media__media {
-    order: -1;
+    order: 1;
   }
 }
