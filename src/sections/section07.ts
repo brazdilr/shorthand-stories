@@ -27,7 +27,6 @@ export function renderSection07(config: Section07Config): HTMLElement {
     <div class="confirmshaming__spacer" aria-hidden="true"></div>
     <div class="confirmshaming__cta">
       <h3>${config.ctaTitle}</h3>
-      <div class="confirmshaming__nope">${config.ctaAltButton}</div>
       <div class="confirmshaming__actions">
         <img src="${config.ctaButtonImage}" alt="ANO" class="confirmshaming__btn-img">
       </div>
