@@ -96,6 +96,57 @@ body {
   display: none;
 }
 
+.section--text-media {
+  background: #f3eee5;
+  border-bottom: none;
+  padding: 6rem 12vw 7rem;
+}
+
+.text-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.text-media__text h2 {
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin: 0 0 22px;
+  font-weight: 800;
+}
+
+.text-media__text p {
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+
+.text-media__spacer {
+  height: 28px;
+}
+
+.text-media__text p strong,
+.text-media__text p em {
+  color: rgba(255, 6, 6, 1);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.text-media__media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.text-media__media img {
+  width: min(420px, 90%);
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 4.5rem 7vw;
@@ -111,5 +162,17 @@ body {
 
   .intro__subtitle--mobile {
     display: block;
+  }
+
+  .section--text-media {
+    padding: 4.5rem 7vw 5rem;
+  }
+
+  .text-media {
+    grid-template-columns: 1fr;
+  }
+
+  .text-media__media {
+    order: -1;
   }
 }

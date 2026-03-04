@@ -1,6 +1,7 @@
 import './style.css'
 import sections from './content/sections.json'
 import { renderIntro, bindIntroScrollEffect } from './sections/intro'
+import { renderSection03 } from './sections/section03'
 
 type Section = {
   id: string
@@ -26,9 +27,26 @@ const introSection = renderIntro({
 
 main.appendChild(introSection)
 
+const section03 = renderSection03({
+  headingOne: 'Víme, jak na tebe',
+  paragraphOne:
+    'Jsme <strong>malé textové mršky</strong> a s tvým mozkem to umíme. Dokážeme tě zmást, dojmout, vystrašit, přemluvit… Ovládáme totiž silné manipulativní techniky – často pak uděláš, co po tobě chceme.',
+  paragraphTwo:
+    'Víš, co je nejlepší? <strong>Budeš si myslet, že to sám chceš.</strong> Že je to pro tebe nejlepší. No, většinou není. 😈',
+  headingTwo: 'Vetřeme se všude',
+  paragraphThree:
+    'Najdeš nás hlavně na <strong>webech</strong>, v <strong>e-mailech</strong> nebo na <strong>reklamních plochách</strong>. Občas nás někdo použije záměrně, občas nevědomky. Ale milují nás všichni, kteří nehrají férovou komunikační hru.',
+  paragraphFour:
+    'Objevujeme se i v <strong>běžné komunikaci</strong>. Třeba argumentační fauly? I v těch máme prsty my.',
+  image: '/cdn/texty-ktere-manipuluji/assets/GuLQgPs35V/na-vrh-bez-na-zvu-2.gif'
+})
+
+main.appendChild(section03)
+
 // Skeleton for remaining sections
 for (const section of data) {
   if (section.id === 'section-AvJwMOfx9A' || section.id === 'section-PLlFDwqZ6E') continue
+  if (section.id === 'section-raFgNq0Y2f') continue
 
   const el = document.createElement('section')
   el.className = `section section--${section.type.toLowerCase()}`
