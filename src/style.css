@@ -147,6 +147,85 @@ body {
   display: block;
 }
 
+.section--reveal {
+  padding: 0;
+  min-height: 360vh;
+  background: #000;
+  border-bottom: none;
+}
+
+.reveal {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.reveal__media {
+  position: absolute;
+  inset: 0;
+}
+
+.reveal__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease-out;
+}
+
+.reveal__image--b {
+  opacity: 0;
+}
+
+.reveal__panels {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.reveal__panel {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%, 30vh);
+  width: min(720px, 84vw);
+  background: rgba(240, 240, 240, 0.96);
+  border-radius: 10px;
+  padding: 26px 32px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  color: #1a1a1a;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.reveal__panel p {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.reveal__panel p:last-child {
+  margin-bottom: 0;
+}
+
+.reveal__panel em {
+  font-style: italic;
+}
+
+.reveal__panel strong {
+  color: rgba(255, 6, 6, 1);
+  font-weight: 700;
+}
+
+.reveal__icon {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 4.5rem 7vw;
@@ -174,5 +253,18 @@ body {
 
   .text-media__media {
     order: 1;
+  }
+
+  .section--reveal {
+    min-height: 320vh;
+  }
+
+  .reveal__panel {
+    top: 14%;
+    padding: 22px 24px;
+  }
+
+  .reveal__panel p {
+    font-size: 16px;
   }
 }
