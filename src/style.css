@@ -288,6 +288,55 @@ body {
   text-align: left;
 }
 
+.section--urgency {
+  background: #f3eee5;
+  border-bottom: none;
+  padding: 6rem 10vw 7rem;
+}
+
+.urgency {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.urgency h2 {
+  margin: 0 0 18px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #333;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.urgency p {
+  margin: 0 0 24px;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.urgency strong,
+.urgency em {
+  color: rgba(255, 6, 6, 1);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.urgency hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 28px auto;
+  width: min(420px, 80%);
+}
+
+.urgency img {
+  width: 520px;
+  max-width: 90vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 .reveal__panel em {
   font-style: italic;
 }
@@ -625,6 +674,10 @@ body {
   .section--reveal {
     min-height: 320vh;
     background: linear-gradient(#f3eee5 0%, #f3eee5 85%, #000 85%, #000 100%);
+  }
+
+  .section--urgency {
+    padding: 4.5rem 7vw 5rem;
   }
 
   .reveal__panel {

@@ -15,6 +15,11 @@ Rebuild the one-page scrollytelling story from Shorthand as a maintainable, stan
 - Section 1 (intro) implemented and tuned (desktop + mobile subtitles, blur-on-scroll)
 - Section 3 (text + GIF) implemented and tuned (desktop + mobile order)
 - Section 4 (reveal) implemented and tuned (two backgrounds, two text panels, scroll timing)
+- Section 5 (scrollpoints) implemented with zoom + panels + pulsing dots; mobile zoom alignment tuning in progress
+- Section 6 (title hook) implemented and tuned (desktop + mobile)
+- Section 7 (confirmshaming text + CTA + GIF) implemented using Section 3 layout
+- Section 8 (emotional blackmail) implemented as reveal with wipe (top-down)
+- Section 9 (urgency) implemented (left-aligned text, centered title, lines + GIF)
 
 ## Working Approach
 We will rebuild the page section by section, keeping code readable and reusable. Each section will have:
@@ -42,11 +47,9 @@ We will rebuild the page section by section, keeping code readable and reusable.
 17. TextSection
 
 ## Next Steps
-1. Section 5: first ScrollpointsSection (scroll-driven focus points).
-2. Section 6–7: title sections (desktop + mobile variants).
-3. Section 8–9: text sections.
-4. Section 10: reveal section.
-5. Continue sequentially through remaining sections.
+1. Section 5: finalize mobile scrollpoints alignment and timing.
+2. Section 10: reveal section (next).
+3. Continue sequentially through remaining sections.
 
 ## Open Questions
 - Should we keep the exact typography and colors from Shorthand, or establish a simplified style system and approximate them?
