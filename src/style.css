@@ -136,6 +136,41 @@ body {
   font-weight: 700;
 }
 
+.section--confirmshaming {
+  background: #f3eee5;
+}
+
+.confirmshaming__spacer {
+  height: 24px;
+}
+
+.confirmshaming__text h3 {
+  margin: 0;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+  font-weight: 400;
+  color: rgba(255, 6, 6, 1);
+}
+
+.confirmshaming__btn {
+  width: 360px;
+  height: auto;
+  max-width: 100%;
+}
+
+.confirmshaming__cta {
+  margin-top: 16px;
+}
+
+.confirmshaming__media {
+  justify-content: flex-start;
+}
+
+.confirmshaming__gif {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+}
 .text-media__media {
   display: flex;
   justify-content: center;
@@ -545,6 +580,20 @@ body {
 
   .text-media__media {
     order: 1;
+  }
+
+  .confirmshaming__media {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .confirmshaming__btn {
+    width: min(380px, 90vw);
+  }
+
+  .confirmshaming__gif {
+    width: min(260px, 70vw);
   }
 
   .section--reveal {
