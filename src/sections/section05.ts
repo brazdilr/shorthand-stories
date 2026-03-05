@@ -9,6 +9,7 @@ type Scrollpoint = {
   title: string
   text: string
   highlight: ScrollpointHighlight
+  dot?: { x: number; y: number } | null
 }
 
 type Section05Config = {
@@ -35,8 +36,19 @@ export function renderSection05(config: Section05Config): HTMLElement {
 
   const media = document.createElement('div')
   media.className = 'scrollpoints__media'
+  const dots = config.points
+    .map((p) => p.dot)
+    .filter((d): d is { x: number; y: number } => Boolean(d))
+    .map(
+      (d) =>
+        `<span class="scrollpoints__dot" style="left:${d.x}%; top:${d.y}%;"></span>`
+    )
+    .join('')
   media.innerHTML = `
-    <img class="scrollpoints__image" src="${config.image}" alt="">
+    <div class="scrollpoints__image-wrap">
+      <img class="scrollpoints__image" src="${config.image}" alt="">
+      ${dots}
+    </div>
   `
 
   const panels = document.createElement('div')
@@ -82,12 +94,13 @@ export function renderSection05(config: Section05Config): HTMLElement {
 
 export function bindScrollpointsSection(section: HTMLElement, config: Section05Config): void {
   const image = section.querySelector<HTMLImageElement>('.scrollpoints__image')
+  const imageWrap = section.querySelector<HTMLDivElement>('.scrollpoints__image-wrap')
   const titlePanel = section.querySelector<HTMLElement>('.scrollpoints__panel--title')
   const pointPanels = Array.from(
     section.querySelectorAll<HTMLElement>('.scrollpoints__panel--point')
   )
 
-  if (!image || !titlePanel) return
+  if (!image || !imageWrap || !titlePanel) return
 
   let imageReady = false
   let naturalW = 0
@@ -197,7 +210,7 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     const x = activePanel !== null ? a.x : a.x + (b.x - a.x) * t
     const y = activePanel !== null ? a.y : a.y + (b.y - a.y) * t
 
-    image.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(3)})`
+    imageWrap.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(3)})`
 
     // Panels
     const translate = (1 - t) * 60
@@ -245,8 +258,8 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
   const onLoad = () => {
     naturalW = image.naturalWidth
     naturalH = image.naturalHeight
-    image.style.width = `${naturalW}px`
-    image.style.height = `${naturalH}px`
+    imageWrap.style.width = `${naturalW}px`
+    imageWrap.style.height = `${naturalH}px`
     imageReady = true
     update()
   }
