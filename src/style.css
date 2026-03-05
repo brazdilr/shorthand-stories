@@ -549,7 +549,7 @@ body {
 
   .section--reveal {
     min-height: 320vh;
-    background: #000;
+    background: linear-gradient(#f3eee5 0%, #f3eee5 85%, #000 85%, #000 100%);
   }
 
   .reveal__panel {
