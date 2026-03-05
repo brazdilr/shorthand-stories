@@ -197,6 +197,10 @@ body {
   border-bottom: none;
 }
 
+.section--reveal-3 {
+  min-height: 520vh;
+}
+
 .reveal {
   position: sticky;
   top: 0;
@@ -230,6 +234,14 @@ body {
 
 .reveal__image--b {
   opacity: 0;
+}
+
+.section--reveal-3 .reveal__image--c {
+  opacity: 0;
+}
+
+.section--reveal-3 .reveal__image {
+  transition: none;
 }
 
 .reveal--wipe .reveal__image--b {
@@ -674,6 +686,10 @@ body {
   .section--reveal {
     min-height: 320vh;
     background: linear-gradient(#f3eee5 0%, #f3eee5 85%, #000 85%, #000 100%);
+  }
+
+  .section--reveal-3 {
+    min-height: 460vh;
   }
 
   .section--reveal-wipe {
