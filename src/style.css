@@ -676,6 +676,10 @@ body {
     background: linear-gradient(#f3eee5 0%, #f3eee5 85%, #000 85%, #000 100%);
   }
 
+  .section--reveal-wipe {
+    background: #f3eee5;
+  }
+
   .section--urgency {
     padding: 4.5rem 7vw 5rem;
   }
