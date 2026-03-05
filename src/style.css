@@ -152,6 +152,13 @@ body {
   color: rgba(255, 6, 6, 1);
 }
 
+.confirmshaming__divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  margin: 22px 0 18px;
+  width: min(520px, 100%);
+}
+
 .confirmshaming__btn {
   width: 360px;
   height: auto;
@@ -167,7 +174,7 @@ body {
 }
 
 .confirmshaming__gif {
-  width: 300px;
+  width: 240px;
   height: auto;
   max-width: 100%;
 }
