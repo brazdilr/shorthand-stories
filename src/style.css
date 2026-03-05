@@ -275,6 +275,8 @@ body {
   width: auto;
   height: auto;
   display: block;
+  transform-origin: top left;
+  will-change: transform;
 }
 
 .scrollpoints__dot {
