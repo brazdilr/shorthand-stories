@@ -4,9 +4,13 @@ type RevealPanel = {
 
 type Section12Config = {
   imageOne: string
+  imageOneMobile: string
   imageTwo: string
+  imageTwoMobile: string
   imageThree: string
+  imageThreeMobile: string
   imageFour: string
+  imageFourMobile: string
   panelOne: RevealPanel
   panelTwo: RevealPanel
 }
@@ -23,15 +27,19 @@ export function renderSection12(config: Section12Config): HTMLElement {
   media.className = 'reveal__media'
   media.innerHTML = `
     <picture class="reveal__image reveal__image--a">
+      <source media="(max-width: 900px)" srcset="${config.imageOneMobile}">
       <img src="${config.imageOne}" alt="">
     </picture>
     <picture class="reveal__image reveal__image--b">
+      <source media="(max-width: 900px)" srcset="${config.imageTwoMobile}">
       <img src="${config.imageTwo}" alt="">
     </picture>
     <picture class="reveal__image reveal__image--c">
+      <source media="(max-width: 900px)" srcset="${config.imageThreeMobile}">
       <img src="${config.imageThree}" alt="">
     </picture>
     <picture class="reveal__image reveal__image--d">
+      <source media="(max-width: 900px)" srcset="${config.imageFourMobile}">
       <img src="${config.imageFour}" alt="">
     </picture>
   `
