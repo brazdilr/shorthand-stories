@@ -174,7 +174,8 @@ export function bindScrollpointsSectionRight(
     viewW: number,
     viewH: number,
     fitWidth: boolean,
-    boost: number
+    boost: number,
+    focusX: number
   ): Transform => {
     const baseScaleRaw = fitWidth
       ? viewW / naturalW
@@ -193,7 +194,7 @@ export function bindScrollpointsSectionRight(
     const zoom = Math.min(4.5, Math.max(1.1, Math.min(scaleX, scaleY) * 1.15))
 
     const totalScale = baseScale * zoom
-    const x = baseX - centerX * baseScale * zoom + viewW / 2
+    const x = baseX - centerX * baseScale * zoom + viewW * focusX
     const y = baseY - centerY * baseScale * zoom + viewH / 2
 
     return { scale: totalScale, x, y }
@@ -219,7 +220,8 @@ export function bindScrollpointsSectionRight(
     const viewH = window.innerHeight
     const isMobile = viewW <= 900
     const fitWidth = isMobile
-    const boost = isMobile ? 1.5 : 1.25
+    const boost = isMobile ? 1.2 : 1.0
+    const focusX = isMobile ? 0.5 : 0.25
 
     const steps: Step[] = []
     const full = fullTransform(viewW, viewH, fitWidth, boost)
@@ -229,7 +231,7 @@ export function bindScrollpointsSectionRight(
 
     let current = full
     config.points.forEach((p, idx) => {
-      const target = toTransform(p.highlight, viewW, viewH, fitWidth, 1)
+      const target = toTransform(p.highlight, viewW, viewH, fitWidth, 1, focusX)
       steps.push({ kind: 'zoom', from: current, to: target, panel: null, weight: 0.7 })
       steps.push({ kind: 'panel', from: target, to: target, panel: idx, weight: 1.6 })
       current = target
