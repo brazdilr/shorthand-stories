@@ -80,9 +80,9 @@ export function bindRevealTripleSection(section: HTMLElement): void {
     imageC.style.opacity = fade2.toFixed(3)
 
     const panelIn = smoothstep(0.42, 0.72, progress)
-    const panelOut = smoothstep(0.74, 0.82, progress)
-    const panelOpacity = (panelIn > 0 ? 0.92 : 0) * (1 - panelOut)
-    const panelTranslate = (1 - panelIn) * 100
+    const panelOut = smoothstep(0.74, 0.86, progress)
+    const panelOpacity = panelIn > 0 ? 0.92 : 0
+    const panelTranslate = (1 - panelIn) * 110 - panelOut * 90
 
     panelA.style.opacity = panelOpacity.toFixed(3)
     panelA.style.transform = `translate(-50%, ${panelTranslate}vh)`

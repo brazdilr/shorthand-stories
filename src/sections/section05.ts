@@ -29,7 +29,7 @@ export function renderSection05(config: Section05Config): HTMLElement {
   section.className = 'section section--scrollpoints'
   section.id = 'section-05'
   const steps = config.points.length * 2 + 4
-  section.style.minHeight = `${steps * 100}vh`
+  section.style.minHeight = `${steps * 240}vh`
 
   const wrap = document.createElement('div')
   wrap.className = 'scrollpoints'
@@ -107,6 +107,10 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
   let naturalH = 0
 
   const clamp = (v: number, min = 0, max = 1) => Math.min(max, Math.max(min, v))
+  const smoothstep = (edge0: number, edge1: number, x: number) => {
+    const t = clamp((x - edge0) / (edge1 - edge0))
+    return t * t * (3 - 2 * t)
+  }
   const ease = (t: number) => t * t * (3 - 2 * t)
 
   const toTransform = (
@@ -213,16 +217,18 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     imageWrap.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(3)})`
 
     // Panels
-    const translate = (1 - t) * 60
+    const panelIn = smoothstep(0.0, 0.08, t)
+    const panelOut = smoothstep(0.6, 0.85, t)
+    const translate = (1 - panelIn) * 90 - panelOut * 90
     const visible = t > 0 ? '0.92' : '0'
 
     titlePanel.style.opacity = activePanel === 'title' ? visible : '0'
     titlePanel.style.transform =
-      activePanel === 'title' ? `translate(-50%, ${translate}vh)` : 'translate(-50%, 60vh)'
+      activePanel === 'title' ? `translate(-50%, ${translate}vh)` : 'translate(-50%, 70vh)'
 
     pointPanels.forEach((panel, idx) => {
       const isActive = activePanel === idx
-      panel.style.opacity = isActive ? visible : '0'
+      panel.style.opacity = isActive ? '0.92' : '0'
 
       if (isMobile && isActive) {
         const highlight = config.points[idx].highlight
@@ -232,16 +238,22 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
         const centerY = (highlight.y / 100) * naturalH + boxH / 2
         const pointY = centerY * scale + y
         const panelRect = panel.getBoundingClientRect()
-        const startTop = pointY + 48
-        const endTop = viewH * 0.08
-        const currentTop = startTop + (endTop - startTop) * t
+        const startTop = viewH + 10
+        const midTop = pointY + 60
+        const endTop = -panelRect.height * 0.2
+        const inPhase = smoothstep(0.0, 0.08, t)
+        const outPhase = smoothstep(0.6, 0.85, t)
+        const currentTop =
+          t < 0.6
+            ? startTop + (midTop - startTop) * inPhase
+            : midTop + (endTop - midTop) * outPhase
         const clampedTop = Math.min(Math.max(currentTop, 12), viewH - panelRect.height - 12)
         panel.style.top = `${clampedTop}px`
         panel.style.transform = 'translate(-50%, 0)'
       } else {
         panel.style.transform = isActive
           ? `translate(-50%, ${translate}vh)`
-          : 'translate(-50%, 60vh)'
+          : 'translate(-50%, 70vh)'
         if (isMobile) panel.style.top = ''
       }
     })

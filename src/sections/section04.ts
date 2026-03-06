@@ -74,16 +74,17 @@ export function bindRevealSection(section: HTMLElement): void {
     imageB.style.opacity = fade.toFixed(3)
 
     const panelAIn = smoothstep(0.55, 0.88, progress)
-    const panelAOut = smoothstep(0.78, 0.9, progress)
-    const panelAOpacity = (panelAIn > 0 ? 0.92 : 0) * (1 - panelAOut)
-    const panelATranslate = (1 - panelAIn) * 100
+    const panelAOut = smoothstep(0.78, 0.92, progress)
+    const panelAOpacity = panelAIn > 0 ? 0.92 : 0
+    const panelATranslate = (1 - panelAIn) * 110 - panelAOut * 90
 
     panelA.style.opacity = panelAOpacity.toFixed(3)
     panelA.style.transform = `translate(-50%, ${panelATranslate}vh)`
 
     const panelBIn = smoothstep(0.9, 1.2, progress)
+    const panelBOut = smoothstep(1.08, 1.25, progress)
     const panelBOpacity = panelBIn > 0 ? 0.92 : 0
-    const panelBTranslate = (1 - panelBIn) * 100
+    const panelBTranslate = (1 - panelBIn) * 110 - panelBOut * 90
 
     panelB.style.opacity = panelBOpacity.toFixed(3)
     panelB.style.transform = `translate(-50%, ${panelBTranslate}vh)`

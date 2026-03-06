@@ -65,9 +65,9 @@ export function bindRevealWipeSection(section: HTMLElement): void {
     const progress = clamp((viewH - rect.top) / total, 0, 1.2)
 
     const panelIn = smoothstep(0.45, 0.72, progress)
-    const panelOut = smoothstep(0.68, 0.82, progress)
-    const panelOpacity = (panelIn > 0 ? 0.92 : 0) * (1 - panelOut)
-    const panelTranslate = (1 - panelIn) * 100
+    const panelOut = smoothstep(0.7, 0.86, progress)
+    const panelOpacity = panelIn > 0 ? 0.92 : 0
+    const panelTranslate = (1 - panelIn) * 110 - panelOut * 90
 
     panelA.style.opacity = panelOpacity.toFixed(3)
     panelA.style.transform = `translate(-50%, ${panelTranslate}vh)`
