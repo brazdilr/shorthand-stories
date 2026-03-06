@@ -24,12 +24,18 @@ type Transform = {
   y: number
 }
 
+type Step = {
+  kind: 'hold' | 'zoom' | 'panel'
+  from: Transform
+  to: Transform
+  panel: 'title' | number | null
+  weight: number
+}
+
 export function renderSection05(config: Section05Config): HTMLElement {
   const section = document.createElement('section')
   section.className = 'section section--scrollpoints'
   section.id = 'section-05'
-  const steps = config.points.length * 2 + 4
-  section.style.minHeight = `${steps * 240}vh`
 
   const wrap = document.createElement('div')
   wrap.className = 'scrollpoints'
@@ -72,9 +78,9 @@ export function renderSection05(config: Section05Config): HTMLElement {
       .filter(Boolean)
       .map((line) => {
         if (line.startsWith('👉')) {
-          return `<li class="scrollpoints__item-hand">${line.replace(/^👉\\s*/, '')}</li>`
+          return `<li class="scrollpoints__item-hand">${line.replace(/^👉\s*/, '')}</li>`
         }
-        const cleaned = line.replace(/^[\\-–•]+\\s*/, '')
+        const cleaned = line.replace(/^[\-–•]+\s*/, '')
         return `<li>${cleaned}</li>`
       })
       .join('')
@@ -111,13 +117,12 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     const t = clamp((x - edge0) / (edge1 - edge0))
     return t * t * (3 - 2 * t)
   }
-  const ease = (t: number) => t * t * (3 - 2 * t)
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 
   const toTransform = (
     highlight: ScrollpointHighlight,
     viewW: number,
     viewH: number,
-    targetY: number,
     fitWidth: boolean
   ): Transform => {
     const baseScale = fitWidth
@@ -133,14 +138,11 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
 
     const scaleX = viewW / (boxW * baseScale)
     const scaleY = viewH / (boxH * baseScale)
-    const zoomBase = Math.min(scaleX, scaleY) * 0.92
-    const zoom = fitWidth
-      ? Math.min(3.6, Math.max(1.3, zoomBase * 1.15))
-      : Math.min(3, Math.max(1.1, zoomBase))
+    const zoom = Math.min(3.6, Math.max(1.1, Math.min(scaleX, scaleY) * 0.92))
 
     const totalScale = baseScale * zoom
     const x = baseX - centerX * baseScale * zoom + viewW / 2
-    const y = baseY - centerY * baseScale * zoom + targetY
+    const y = baseY - centerY * baseScale * zoom + viewH / 2
 
     return { scale: totalScale, x, y }
   }
@@ -154,36 +156,37 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     return { scale: baseScale, x: baseX, y: baseY }
   }
 
-  const getSequence = (isMobile: boolean): { transforms: Transform[]; panels: (number | 'title' | null)[] } => {
+  const buildSteps = (): Step[] => {
     const viewW = window.innerWidth
     const viewH = window.innerHeight
-    const targetY = isMobile ? viewH * 0.38 : viewH / 2
+    const isMobile = viewW <= 900
     const fitWidth = isMobile
 
-    const transforms: Transform[] = []
-    const panels: (number | 'title' | null)[] = []
+    const steps: Step[] = []
+    const full = fullTransform(viewW, viewH, fitWidth)
 
-    transforms.push(fullTransform(viewW, viewH, fitWidth)) // intro full
-    panels.push(null)
-    transforms.push(fullTransform(viewW, viewH, fitWidth)) // title hold
-    panels.push('title')
-    transforms.push(fullTransform(viewW, viewH, fitWidth)) // pre-zoom full
-    panels.push(null)
+    steps.push({ kind: 'hold', from: full, to: full, panel: null, weight: 0.8 })
+    steps.push({ kind: 'panel', from: full, to: full, panel: 'title', weight: 1.2 })
 
+    let current = full
     config.points.forEach((p, idx) => {
-      const target = toTransform(p.highlight, viewW, viewH, targetY, fitWidth)
-      transforms.push(target) // zoom to point
-      panels.push(null)
-      transforms.push(target) // hold + panel
-      panels.push(idx)
-      transforms.push(target) // pre-zoom (stay) for next move
-      panels.push(null)
+      const target = toTransform(p.highlight, viewW, viewH, fitWidth)
+      steps.push({ kind: 'zoom', from: current, to: target, panel: null, weight: 0.7 })
+      steps.push({ kind: 'panel', from: target, to: target, panel: idx, weight: 1.6 })
+      current = target
     })
 
-    transforms.push(fullTransform(viewW, viewH, fitWidth)) // outro full
-    panels.push(null)
+    steps.push({ kind: 'zoom', from: current, to: full, panel: null, weight: 0.7 })
 
-    return { transforms, panels }
+    return steps
+  }
+
+  const updateSectionHeight = () => {
+    const viewW = window.innerWidth
+    const isMobile = viewW <= 900
+    const steps = config.points.length * 2 + 3
+    const stepHeight = isMobile ? 220 : 200
+    section.style.minHeight = `${steps * stepHeight}vh`
   }
 
   const update = () => {
@@ -191,75 +194,49 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
 
     const rect = section.getBoundingClientRect()
     const viewH = window.innerHeight
-    const viewW = window.innerWidth
     const total = Math.max(1, rect.height - viewH)
     const progress = clamp((viewH - rect.top) / total)
-    const isMobile = viewW <= 900
 
-    const { transforms, panels } = getSequence(isMobile)
-    const steps = transforms.length
+    const steps = buildSteps()
+    const totalWeight = steps.reduce((sum, s) => sum + s.weight, 0)
+    const target = progress * totalWeight
 
-    const stepFloat = progress * (steps - 1)
-    const step = Math.min(steps - 2, Math.floor(stepFloat))
-    const t = ease(stepFloat - step)
+    let acc = 0
+    let stepIndex = 0
+    while (stepIndex < steps.length && acc + steps[stepIndex].weight < target) {
+      acc += steps[stepIndex].weight
+      stepIndex += 1
+    }
+    const step = steps[Math.min(stepIndex, steps.length - 1)]
+    const localT = step.weight ? (target - acc) / step.weight : 0
+    const t = smoothstep(0, 1, localT)
 
-    const a = transforms[step]
-    const b = transforms[step + 1]
-
-    // Panels
-    const activePanel = panels[step]
-
-    const scale =
-      activePanel !== null ? a.scale : a.scale + (b.scale - a.scale) * t
-    const x = activePanel !== null ? a.x : a.x + (b.x - a.x) * t
-    const y = activePanel !== null ? a.y : a.y + (b.y - a.y) * t
+    const from = step.from
+    const to = step.to
+    const scale = lerp(from.scale, to.scale, t)
+    const x = lerp(from.x, to.x, t)
+    const y = lerp(from.y, to.y, t)
 
     imageWrap.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${scale.toFixed(3)})`
 
-    // Panels
-    const panelIn = smoothstep(0.0, 0.08, t)
-    const panelOut = smoothstep(0.6, 0.85, t)
-    const translate = (1 - panelIn) * 90 - panelOut * 90
-    const visible = t > 0 ? '0.92' : '0'
+    const panelTranslate = lerp(110, -90, t)
+    const panelOpacity = step.panel !== null ? 0.92 : 0
 
-    titlePanel.style.opacity = activePanel === 'title' ? visible : '0'
+    titlePanel.style.opacity = step.panel === 'title' ? String(panelOpacity) : '0'
     titlePanel.style.transform =
-      activePanel === 'title' ? `translate(-50%, ${translate}vh)` : 'translate(-50%, 70vh)'
+      step.panel === 'title' ? `translate(-50%, ${panelTranslate}vh)` : 'translate(-50%, 110vh)'
 
     pointPanels.forEach((panel, idx) => {
-      const isActive = activePanel === idx
-      panel.style.opacity = isActive ? '0.92' : '0'
-
-      if (isMobile && isActive) {
-        const highlight = config.points[idx].highlight
-        const boxW = (highlight.width / 100) * naturalW
-        const boxH = (highlight.height / 100) * naturalH
-        const centerX = (highlight.x / 100) * naturalW + boxW / 2
-        const centerY = (highlight.y / 100) * naturalH + boxH / 2
-        const pointY = centerY * scale + y
-        const panelRect = panel.getBoundingClientRect()
-        const startTop = viewH + 10
-        const midTop = pointY + 60
-        const endTop = -panelRect.height * 0.2
-        const inPhase = smoothstep(0.0, 0.08, t)
-        const outPhase = smoothstep(0.6, 0.85, t)
-        const currentTop =
-          t < 0.6
-            ? startTop + (midTop - startTop) * inPhase
-            : midTop + (endTop - midTop) * outPhase
-        const clampedTop = Math.min(Math.max(currentTop, 12), viewH - panelRect.height - 12)
-        panel.style.top = `${clampedTop}px`
-        panel.style.transform = 'translate(-50%, 0)'
-      } else {
-        panel.style.transform = isActive
-          ? `translate(-50%, ${translate}vh)`
-          : 'translate(-50%, 70vh)'
-        if (isMobile) panel.style.top = ''
-      }
+      const isActive = step.panel === idx
+      panel.style.opacity = isActive ? String(panelOpacity) : '0'
+      panel.style.transform = isActive
+        ? `translate(-50%, ${panelTranslate}vh)`
+        : 'translate(-50%, 110vh)'
     })
   }
 
   const onResize = () => {
+    updateSectionHeight()
     update()
   }
 
@@ -273,6 +250,7 @@ export function bindScrollpointsSection(section: HTMLElement, config: Section05C
     imageWrap.style.width = `${naturalW}px`
     imageWrap.style.height = `${naturalH}px`
     imageReady = true
+    updateSectionHeight()
     update()
   }
 
