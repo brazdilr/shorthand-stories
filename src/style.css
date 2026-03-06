@@ -3,7 +3,7 @@
 :root {
   color-scheme: light;
   font-family: 'Outfit', system-ui, -apple-system, Segoe UI, sans-serif;
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
   color: #151515;
 }
 
@@ -14,11 +14,11 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
 }
 
 html {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
 }
 
 .page {
@@ -103,7 +103,7 @@ html {
 }
 
 .section--text-media {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
   border-bottom: none;
   padding: 6rem 12vw 7rem;
 }
@@ -142,7 +142,7 @@ html {
 }
 
 .section--confirmshaming {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
 }
 
 .confirmshaming__spacer {
@@ -198,7 +198,7 @@ html {
 .section--reveal {
   padding: 0;
   min-height: 520vh;
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
   border-bottom: none;
 }
 
@@ -306,7 +306,7 @@ html {
 }
 
 .section--urgency {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
   border-bottom: none;
   padding: 6rem 10vw 7rem;
 }
@@ -485,7 +485,7 @@ html {
 }
 
 .section--scrollpoints-light {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
 }
 
 .scrollpoints {
@@ -497,7 +497,7 @@ html {
 }
 
 .scrollpoints--light {
-  background: rgba(246, 246, 234, 1);
+  background: #f3eee5;
 }
 
 .scrollpoints__media {
@@ -900,7 +900,7 @@ html {
   }
 
   .section--reveal-wipe {
-    background: rgba(246, 246, 234, 1);
+    background: #f3eee5;
   }
 
   .section--urgency {
@@ -953,12 +953,12 @@ html {
   .section--reveal .reveal__media,
   .section--reveal .reveal__image,
   .section--scrollpoints .scrollpoints {
-    background: rgba(246, 246, 234, 1);
+    background: #f3eee5;
   }
 
   .section--reveal,
   .section--scrollpoints {
-    background: rgba(246, 246, 234, 1);
+    background: #f3eee5;
   }
 
   .section--resources {
@@ -1016,7 +1016,7 @@ html {
   .section--reveal-4 .reveal,
   .section--reveal-4 .reveal__media,
   .section--reveal-4 .reveal__image {
-    background: rgba(246, 246, 234, 1);
+    background: #f3eee5;
   }
 
   .reveal__compare {
