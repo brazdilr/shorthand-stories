@@ -375,6 +375,59 @@ html {
   border-bottom: none;
 }
 
+.section--tips {
+  background: #f3eee5;
+  padding: 5.5rem 8vw 6rem;
+}
+
+.tips {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tips h2 {
+  margin: 0 0 24px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #303030;
+  text-align: left;
+}
+
+.tips__title {
+  margin-top: 0;
+}
+
+.tips__spacer {
+  height: 40px;
+}
+
+.tips__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+  text-align: left;
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.tips__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.tips__list--warn {
+  gap: 22px;
+}
+
 .section--scrollpoints-light {
   background: #f3eee5;
 }
