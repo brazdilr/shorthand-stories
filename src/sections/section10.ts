@@ -70,17 +70,17 @@ export function bindRevealTripleSection(section: HTMLElement): void {
     const rect = section.getBoundingClientRect()
     const viewH = window.innerHeight
     const total = Math.max(1, rect.height - viewH)
-    const progress = clamp((viewH - rect.top) / total, 0, 1.12)
+    const progress = clamp((viewH - rect.top) / total, 0, 1.2)
 
-    const fade1 = smoothstep(0.68, 0.88, progress)
-    const fade2 = smoothstep(0.92, 1.08, progress)
+    const fade1 = smoothstep(0.6, 0.95, progress)
+    const fade2 = smoothstep(1.02, 1.2, progress)
 
     imageA.style.opacity = (1 - fade1).toFixed(3)
     imageB.style.opacity = (fade1 * (1 - fade2)).toFixed(3)
     imageC.style.opacity = fade2.toFixed(3)
 
-    const panelIn = smoothstep(0.42, 0.72, progress)
-    const panelOut = smoothstep(0.74, 0.86, progress)
+    const panelIn = smoothstep(0.4, 0.8, progress)
+    const panelOut = smoothstep(0.72, 0.95, progress)
     const panelOpacity = panelIn > 0 ? 0.92 : 0
     const panelTranslate = (1 - panelIn) * 110 - panelOut * 90
 

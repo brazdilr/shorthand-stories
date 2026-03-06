@@ -69,20 +69,20 @@ export function bindRevealSection(section: HTMLElement): void {
     const total = Math.max(1, rect.height - viewH)
     const progress = clamp((viewH - rect.top) / total, 0, 1.2)
 
-    const fade = smoothstep(0.75, 0.95, progress)
+    const fade = smoothstep(0.7, 1.05, progress)
     imageA.style.opacity = (1 - fade).toFixed(3)
     imageB.style.opacity = fade.toFixed(3)
 
-    const panelAIn = smoothstep(0.55, 0.88, progress)
-    const panelAOut = smoothstep(0.78, 0.92, progress)
+    const panelAIn = smoothstep(0.5, 0.9, progress)
+    const panelAOut = smoothstep(0.78, 0.98, progress)
     const panelAOpacity = panelAIn > 0 ? 0.92 : 0
     const panelATranslate = (1 - panelAIn) * 110 - panelAOut * 90
 
     panelA.style.opacity = panelAOpacity.toFixed(3)
     panelA.style.transform = `translate(-50%, ${panelATranslate}vh)`
 
-    const panelBIn = smoothstep(0.9, 1.2, progress)
-    const panelBOut = smoothstep(1.08, 1.25, progress)
+    const panelBIn = smoothstep(0.95, 1.25, progress)
+    const panelBOut = smoothstep(1.12, 1.35, progress)
     const panelBOpacity = panelBIn > 0 ? 0.92 : 0
     const panelBTranslate = (1 - panelBIn) * 110 - panelBOut * 90
 

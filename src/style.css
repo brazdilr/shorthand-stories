@@ -192,13 +192,13 @@ body {
 
 .section--reveal {
   padding: 0;
-  min-height: 420vh;
+  min-height: 520vh;
   background: #f3eee5;
   border-bottom: none;
 }
 
 .section--reveal-3 {
-  min-height: 600vh;
+  min-height: 680vh;
 }
 
 .reveal {
@@ -684,12 +684,12 @@ body {
   }
 
   .section--reveal {
-    min-height: 380vh;
+    min-height: 460vh;
     background: linear-gradient(#f3eee5 0%, #f3eee5 85%, #000 85%, #000 100%);
   }
 
   .section--reveal-3 {
-    min-height: 540vh;
+    min-height: 620vh;
   }
 
   .section--reveal-wipe {

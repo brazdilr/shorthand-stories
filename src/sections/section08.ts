@@ -64,15 +64,15 @@ export function bindRevealWipeSection(section: HTMLElement): void {
     const total = Math.max(1, rect.height - viewH)
     const progress = clamp((viewH - rect.top) / total, 0, 1.2)
 
-    const panelIn = smoothstep(0.45, 0.72, progress)
-    const panelOut = smoothstep(0.7, 0.86, progress)
+    const panelIn = smoothstep(0.45, 0.8, progress)
+    const panelOut = smoothstep(0.7, 0.95, progress)
     const panelOpacity = panelIn > 0 ? 0.92 : 0
     const panelTranslate = (1 - panelIn) * 110 - panelOut * 90
 
     panelA.style.opacity = panelOpacity.toFixed(3)
     panelA.style.transform = `translate(-50%, ${panelTranslate}vh)`
 
-    const wipe = smoothstep(0.78, 1.08, progress)
+    const wipe = smoothstep(0.85, 1.2, progress)
     const insetTop = (1 - wipe) * 100
     imageB.style.clipPath = `inset(${insetTop}% 0 0 0)`
 
