@@ -370,12 +370,20 @@ body {
   border-bottom: none;
 }
 
+.section--scrollpoints-light {
+  background: #f3eee5;
+}
+
 .scrollpoints {
   position: sticky;
   top: 0;
   height: 100vh;
   overflow: hidden;
   background: #000;
+}
+
+.scrollpoints--light {
+  background: #f3eee5;
 }
 
 .scrollpoints__media {
@@ -474,6 +482,16 @@ body {
   list-style: none;
 }
 
+.scrollpoints__panel p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.scrollpoints__panel p + p {
+  margin-top: 12px;
+}
+
 .scrollpoints__panel li {
   position: relative;
   padding-left: 18px;
@@ -499,6 +517,26 @@ body {
 
 .scrollpoints__panel li + li {
   margin-top: 8px;
+}
+
+.scrollpoints--right .scrollpoints__panel {
+  left: auto;
+  right: 8vw;
+  transform: translate(0, 30vh);
+  width: min(640px, 46vw);
+  text-align: left;
+}
+
+.scrollpoints--right .scrollpoints__panel h3 {
+  text-align: left;
+}
+
+.scrollpoints__panel--note h4 {
+  display: none;
+}
+
+.scrollpoints__panel--note p {
+  font-size: 18px;
 }
 
 .section--title-hook {
@@ -750,6 +788,15 @@ body {
 
   .scrollpoints__panel ul {
     font-size: 16px;
+  }
+
+  .scrollpoints__panel p {
+    font-size: 16px;
+  }
+
+  .scrollpoints--right .scrollpoints__panel {
+    right: 6vw;
+    width: min(88vw, 600px);
   }
 
   .section--title-hook {

@@ -20,6 +20,7 @@ Rebuild the one-page scrollytelling story from Shorthand as a maintainable, stan
 - Section 7 (confirmshaming text + CTA + GIF) implemented using Section 3 layout
 - Section 8 (emotional blackmail) implemented as reveal with wipe (top-down)
 - Section 9 (urgency) implemented (left-aligned text, centered title, lines + GIF)
+- Section 11 (scrollpoints: Co ještě umíme?) implemented with right-aligned panels
 
 ## Working Approach
 We will rebuild the page section by section, keeping code readable and reusable. Each section will have:
@@ -48,8 +49,7 @@ We will rebuild the page section by section, keeping code readable and reusable.
 
 ## Next Steps
 1. Section 5: finalize mobile scrollpoints alignment and timing.
-2. Section 10: reveal section (next).
-3. Continue sequentially through remaining sections.
+2. Continue sequentially through remaining sections.
 
 ## Open Questions
 - Should we keep the exact typography and colors from Shorthand, or establish a simplified style system and approximate them?
