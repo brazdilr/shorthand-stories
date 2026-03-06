@@ -21,6 +21,7 @@ Rebuild the one-page scrollytelling story from Shorthand as a maintainable, stan
 - Section 8 (emotional blackmail) implemented as reveal with wipe (top-down)
 - Section 9 (urgency) implemented (left-aligned text, centered title, lines + GIF)
 - Section 11 (scrollpoints: Co ještě umíme?) implemented with right-aligned panels
+- Section 12 (reveal: Prostě nehrajeme fér.) implemented with four backgrounds and two dark panels
 
 ## Working Approach
 We will rebuild the page section by section, keeping code readable and reusable. Each section will have:

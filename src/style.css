@@ -519,6 +519,57 @@ body {
   margin-top: 8px;
 }
 
+.section--reveal-4 {
+  min-height: 880vh;
+}
+
+.reveal__panel--dark {
+  background: rgba(20, 20, 20, 0.95);
+  color: #f5f5f5;
+}
+
+.reveal__panel--dark h2,
+.reveal__panel--dark h3,
+.reveal__panel--dark h4,
+.reveal__panel--dark p,
+.reveal__panel--dark li {
+  color: #f5f5f5;
+}
+
+.reveal__panel--dark strong {
+  color: #ffffff;
+}
+
+.reveal__compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 16px 0;
+}
+
+.reveal__compare h3 {
+  margin: 0 0 8px;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.reveal__compare ul {
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.reveal__compare li + li {
+  margin-top: 6px;
+}
+
+.reveal__example {
+  margin-top: 14px;
+  font-style: italic;
+}
+
 .scrollpoints--right .scrollpoints__panel {
   left: auto;
   right: 8vw;
@@ -797,6 +848,15 @@ body {
   .scrollpoints--right .scrollpoints__panel {
     right: 6vw;
     width: min(88vw, 600px);
+  }
+
+  .section--reveal-4 {
+    min-height: 760vh;
+  }
+
+  .reveal__compare {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .section--title-hook {
