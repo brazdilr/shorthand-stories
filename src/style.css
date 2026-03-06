@@ -14,6 +14,11 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background: #f3eee5;
+}
+
+html {
+  background: #f3eee5;
 }
 
 .page {
@@ -523,6 +528,10 @@ body {
   min-height: 880vh;
 }
 
+.section--reveal-4 .reveal {
+  background: #f3eee5;
+}
+
 .reveal__panel--dark {
   background: rgba(20, 20, 20, 0.95);
   color: #f5f5f5;
@@ -823,6 +832,26 @@ body {
     margin-left: calc(50% - 50vw);
   }
 
+  .section--scrollpoints {
+    margin-bottom: -3px;
+  }
+
+  .section--reveal {
+    margin-bottom: -3px;
+  }
+
+  .section--reveal .reveal,
+  .section--reveal .reveal__media,
+  .section--reveal .reveal__image,
+  .section--scrollpoints .scrollpoints {
+    background: #f3eee5;
+  }
+
+  .section--reveal,
+  .section--scrollpoints {
+    background: #f3eee5;
+  }
+
   .scrollpoints__panel {
     top: 12%;
     width: min(88vw, 600px);
@@ -852,6 +881,12 @@ body {
 
   .section--reveal-4 {
     min-height: 760vh;
+  }
+
+  .section--reveal-4 .reveal,
+  .section--reveal-4 .reveal__media,
+  .section--reveal-4 .reveal__image {
+    background: #f3eee5;
   }
 
   .reveal__compare {
