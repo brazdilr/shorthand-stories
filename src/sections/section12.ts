@@ -77,40 +77,73 @@ export function bindRevealQuadSection(section: HTMLElement): void {
     const t = clamp((x - edge0) / (edge1 - edge0))
     return t * t * (3 - 2 * t)
   }
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 
   let ticking = false
 
   const update = () => {
     const rect = section.getBoundingClientRect()
     const viewH = window.innerHeight
+    const isMobile = window.innerWidth <= 900
     const total = Math.max(1, rect.height - viewH)
     const progress = clamp((viewH - rect.top) / total, 0, 1)
+    const panelOneStart = isMobile ? 0.08 : 0.1
+    const panelOneEnd = isMobile ? 0.42 : 0.4
+    const transitionsStart = panelOneEnd + 0.02
+    const transitionsEnd = isMobile ? 0.72 : 0.7
+    const panelTwoStart = transitionsEnd + 0.03
+    const panelTwoEnd = 1
+    const exitDistance = isMobile ? 175 : 150
 
-    const fade1 = smoothstep(0.2, 0.4, progress)
-    const wipe2 = smoothstep(0.45, 0.65, progress)
-    const fade3 = smoothstep(0.75, 0.9, progress)
+    const panelOneProgress = clamp((progress - panelOneStart) / (panelOneEnd - panelOneStart))
+    const panelOneOpacity =
+      smoothstep(panelOneStart, panelOneStart + 0.1, progress) *
+      (1 - smoothstep(panelOneEnd - 0.12, panelOneEnd, progress)) *
+      0.92
+    const panelOneTranslate = lerp(120, -exitDistance, panelOneProgress)
 
-    imageA.style.opacity = (1 - fade1).toFixed(3)
-    imageB.style.opacity = fade1.toFixed(3)
-    imageC.style.opacity = (1 - fade3).toFixed(3)
-    imageC.style.clipPath = `inset(${(1 - wipe2) * 100}% 0 0 0)`
-    imageD.style.opacity = fade3.toFixed(3)
-
-    const panelOneIn = smoothstep(0.15, 0.32, progress)
-    const panelOneOut = smoothstep(0.34, 0.48, progress)
-    const panelTwoIn = smoothstep(0.82, 0.98, progress)
-
-    const panelOneOpacity = panelOneIn > 0 ? 0.92 : 0
-    const panelTwoOpacity = panelTwoIn > 0 ? 0.92 : 0
-
-    const panelOneTranslate = (1 - panelOneIn) * 110 - panelOneOut * 130
-    const panelTwoTranslate = (1 - panelTwoIn) * 110 - smoothstep(0.98, 1.0, progress) * 130
+    const panelTwoProgress = clamp((progress - panelTwoStart) / (panelTwoEnd - panelTwoStart))
+    const panelTwoOpacityIn = smoothstep(panelTwoStart, panelTwoStart + 0.12, progress) * 0.92
+    const panelTwoTranslate = lerp(120, -exitDistance, panelTwoProgress)
 
     panelA.style.opacity = panelOneOpacity.toFixed(3)
-    panelA.style.transform = `translate(-50%, ${panelOneTranslate}vh)`
+    panelA.style.transform = `translate(-50%, ${panelOneTranslate.toFixed(2)}vh)`
+    panelB.style.transform = `translate(-50%, ${panelTwoTranslate.toFixed(2)}vh)`
 
+    const panelTwoRect = panelB.getBoundingClientRect()
+    const fadeStartY = viewH * 0.5
+    const fadeDistance = Math.max(viewH * 0.35, panelTwoRect.height * 0.7)
+    const fadeEndY = fadeStartY - fadeDistance
+    const panelTwoOutByPosition = 1 - smoothstep(fadeEndY, fadeStartY, panelTwoRect.bottom)
+    const panelTwoOpacity = panelTwoOpacityIn * (1 - panelTwoOutByPosition)
     panelB.style.opacity = panelTwoOpacity.toFixed(3)
-    panelB.style.transform = `translate(-50%, ${panelTwoTranslate}vh)`
+
+    if (progress <= transitionsStart) {
+      imageA.style.opacity = '1'
+      imageB.style.opacity = '0'
+      imageC.style.opacity = '0'
+      imageD.style.opacity = '0'
+      imageC.style.clipPath = 'inset(100% 0 0 0)'
+    } else if (progress >= transitionsEnd) {
+      imageA.style.opacity = '0'
+      imageB.style.opacity = '0'
+      imageC.style.opacity = '0'
+      imageD.style.opacity = '1'
+      imageC.style.clipPath = 'inset(0 0 0 0)'
+    } else {
+      const transitionProgress = clamp(
+        (progress - transitionsStart) / (transitionsEnd - transitionsStart)
+      )
+      const fadeAB = smoothstep(0, 0.34, transitionProgress)
+      const wipeC = smoothstep(0.34, 0.72, transitionProgress)
+      const fadeCD = smoothstep(0.72, 1, transitionProgress)
+
+      imageA.style.opacity = (1 - fadeAB).toFixed(3)
+      imageB.style.opacity = (fadeAB * (1 - wipeC)).toFixed(3)
+      imageC.style.opacity = (1 - fadeCD).toFixed(3)
+      imageD.style.opacity = fadeCD.toFixed(3)
+      imageC.style.clipPath = `inset(${((1 - wipeC) * 100).toFixed(2)}% 0 0 0)`
+    }
 
     ticking = false
   }
