@@ -369,7 +369,6 @@ section15.innerHTML = `
       <h2>Vytvořil Radek Brázdil</h2>
       <p class="credits__role">Copywriter a tvůrce obsahu</p>
       <p><a href="https://www.linkedin.com/in/radekbrazdil" target="_blank" rel="noreferrer">www.linkedin.com/in/radekbrazdil</a></p>
-      <a class="credits__button" href="https://pribehy.shorthandstories.com/radek-brazdil-copywriter-tvurce/" target="_blank" rel="noreferrer">Omrknout Radkův příběh</a>
 
       <p class="credits__note"><em>Projekt Manipuláci využívá techniku scrollytellingu. Vznikl s pomocí AI nástrojů (Midjourney, ChatGPT, Canva, Minimax).</em></p>
       <p class="credits__note"><em>Promyšleným spojením textu s grafickými prvky dokážu odvyprávět i příběh tvé značky nebo produktu. Pokud chceš vědět víc, <a href="https://navolnenoze.cz/prezentace/radek-brazdil/" target="_blank" rel="noreferrer">kontaktuj mě</a>.</em></p>
