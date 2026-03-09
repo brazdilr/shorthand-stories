@@ -883,10 +883,13 @@ html {
 
 .confirmshaming__bottom {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 2.5rem;
   justify-items: start;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .confirmshaming__spacer {
@@ -896,7 +899,9 @@ html {
 
 .confirmshaming__cta {
   margin-left: 0;
-  grid-column: 1;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  padding-top: 22px;
 }
 
 .confirmshaming__cta h3 {

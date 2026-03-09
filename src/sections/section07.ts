@@ -4,8 +4,7 @@ type Section07Config = {
   paragraphTwo: string
   ctaTitle: string
   ctaButtonImage: string
-  ctaAltButton: string
-  monsterImage: string
+  gifImage: string
 }
 
 export function renderSection07(config: Section07Config): HTMLElement {
@@ -29,10 +28,8 @@ export function renderSection07(config: Section07Config): HTMLElement {
       <h3>${config.ctaTitle}</h3>
       <div class="confirmshaming__actions">
         <img src="${config.ctaButtonImage}" alt="ANO" class="confirmshaming__btn-img">
+        <img src="${config.gifImage}" alt="Ne, chci být chudý" class="confirmshaming__gif">
       </div>
-    </div>
-    <div class="confirmshaming__monster">
-      <img src="${config.monsterImage}" alt="">
     </div>
   `
 
