@@ -23,6 +23,8 @@ Rebuild the one-page scrollytelling story from Shorthand as a maintainable, stan
 - Section 11 (scrollpoints: Co ještě umíme?) implemented with right-aligned panels
 - Section 12 (reveal: Prostě nehrajeme fér.) implemented with four backgrounds and two dark panels
 - Section 13 (text: Jak bojovat s Manipuláky?) implemented
+- Section 14 (resources split with video) implemented
+- Section 15 (credits + thanks) implemented; final section
 
 ## Working Approach
 We will rebuild the page section by section, keeping code readable and reusable. Each section will have:
