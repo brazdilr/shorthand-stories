@@ -917,7 +917,6 @@ html {
   height: auto;
 }
 
-
 .confirmshaming__monster img {
   width: 338px;
   height: auto;
@@ -950,6 +949,42 @@ html {
 
   .text-media__media {
     order: 1;
+  }
+
+  .confirmshaming__top {
+    max-width: 100%;
+  }
+
+  .confirmshaming__top h2 {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 1.7rem;
+  }
+
+  .section--confirmshaming {
+    padding: 4.5rem 7vw 5rem;
+  }
+
+  .confirmshaming__bottom {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .confirmshaming__cta,
+  .confirmshaming__monster {
+    width: 100%;
+  }
+
+  .confirmshaming__actions {
+    flex-wrap: wrap;
+  }
+
+  .confirmshaming__btn-img {
+    width: min(416px, 90vw);
+  }
+
+  .confirmshaming__monster img {
+    width: min(338px, 70vw);
   }
 
   .confirmshaming__media {
@@ -1149,3 +1184,28 @@ html {
     bottom: 80px;
   }
 }
+  .section--confirmshaming {
+    padding: 4.5rem 7vw 5rem;
+  }
+
+  .confirmshaming__bottom {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .confirmshaming__cta,
+  .confirmshaming__monster {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .confirmshaming__btn-img {
+    width: 100%;
+    max-width: 416px;
+    height: auto;
+  }
+
+  .confirmshaming__monster img {
+    width: min(338px, 70vw);
+    height: auto;
+  }
