@@ -203,7 +203,7 @@ html {
 }
 
 .section--reveal-3 {
-  min-height: 680vh;
+  min-height: 820vh;
 }
 
 .reveal {
@@ -813,7 +813,7 @@ html {
 .title-hook__text {
   position: absolute;
   left: 12vw;
-  top: 190px;
+  top: 290px;
   transform: translateY(-50%);
   max-width: 60vw;
 }
@@ -833,7 +833,7 @@ html {
 .title-hook__bottom {
   position: absolute;
   right: 10vw;
-  bottom: 60px;
+  bottom: 135px;
   text-align: right;
 }
 
@@ -1000,11 +1000,8 @@ html {
     background: #000;
   }
 
-  #section-04,
-  #section-04 .reveal,
-  #section-04 .reveal__media,
-  #section-04 .reveal__image {
-    background: #000;
+  #section-04 {
+    background: linear-gradient(#f3eee5 0%, #f3eee5 82%, #000 82%, #000 100%);
   }
 
   .confirmshaming__btn {
@@ -1021,7 +1018,7 @@ html {
   }
 
   .section--reveal-3 {
-    min-height: 620vh;
+    min-height: 820vh;
   }
 
   .section--reveal-wipe {
@@ -1178,7 +1175,7 @@ html {
 
   .title-hook__text {
     left: 8vw;
-    top: 150px;
+    top: 250px;
   }
 
   .title-hook__media {
@@ -1195,7 +1192,7 @@ html {
 
   .title-hook__bottom {
     right: 8vw;
-    bottom: 80px;
+    bottom: 155px;
   }
 }
   .section--confirmshaming {

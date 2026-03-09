@@ -63,29 +63,35 @@ export function bindRevealTripleSection(section: HTMLElement): void {
     const t = clamp((x - edge0) / (edge1 - edge0))
     return t * t * (3 - 2 * t)
   }
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 
   let ticking = false
 
   const update = () => {
     const rect = section.getBoundingClientRect()
     const viewH = window.innerHeight
+    const isMobile = window.innerWidth <= 900
     const total = Math.max(1, rect.height - viewH)
-    const progress = clamp((viewH - rect.top) / total, 0, 1.2)
+    const progress = clamp((viewH - rect.top) / total, 0, 1)
 
-    const fade1 = smoothstep(0.6, 0.95, progress)
-    const fade2 = smoothstep(1.02, 1.2, progress)
+    const fade1 = smoothstep(0.28, 0.56, progress)
+    const fade2 = smoothstep(0.56, 1.0, progress)
 
     imageA.style.opacity = (1 - fade1).toFixed(3)
     imageB.style.opacity = (fade1 * (1 - fade2)).toFixed(3)
     imageC.style.opacity = fade2.toFixed(3)
 
-    const panelIn = smoothstep(0.4, 0.8, progress)
-    const panelOut = smoothstep(0.72, 0.95, progress)
-    const panelOpacity = panelIn > 0 ? 0.92 : 0
-    const panelTranslate = (1 - panelIn) * 110 - panelOut * 90
+    const panelIn = smoothstep(0.2, 0.54, progress)
+    const panelOut = smoothstep(0.5, 0.88, progress)
+    const exitDistance = isMobile ? 210 : 170
+    const panelTranslate = lerp(120, -exitDistance, panelOut)
+    const panelOpacityIn = panelIn * 0.92
 
+    panelA.style.transform = `translate(-50%, ${panelTranslate.toFixed(2)}vh)`
+    const panelRect = panelA.getBoundingClientRect()
+    const panelOutByPosition = 1 - smoothstep(-panelRect.height * 0.3, viewH * 0.5, panelRect.bottom)
+    const panelOpacity = panelOpacityIn * (1 - panelOutByPosition)
     panelA.style.opacity = panelOpacity.toFixed(3)
-    panelA.style.transform = `translate(-50%, ${panelTranslate}vh)`
 
     ticking = false
   }
