@@ -993,6 +993,12 @@ html {
     gap: 16px;
   }
 
+  #section-05,
+  #section-05 .scrollpoints,
+  #section-05 .scrollpoints__media {
+    background: #000;
+  }
+
   .confirmshaming__btn {
     width: min(380px, 90vw);
   }
